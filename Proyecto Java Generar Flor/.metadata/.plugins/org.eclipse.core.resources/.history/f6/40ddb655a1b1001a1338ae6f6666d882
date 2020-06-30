@@ -1,0 +1,33 @@
+package proyecto;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferByte;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+public class leerArchivo {
+	
+	private static int[][] convertTo2DUsingGetRGB(BufferedImage image) {
+		int width = image.getWidth();
+	      int height = image.getHeight();
+	      int[][] result = new int[height][width];
+
+	      for (int row = 0; row < height; row++) {
+	         for (int col = 0; col < width; col++) {
+	            result[row][col] = image.getRGB(col, row);
+	         }
+	      }
+
+	      return result;
+	   }
+	
+	public static int[][] abrirArchivo(String nombre) {
+		BufferedImage hugeImage = ImageIO.read(leerArchivo.class.getResource(nombre+".jpg"));
+	     for (int i = 0; i < 10; i++) {
+	    	 int width = hugeImage.getWidth();
+		      int height = hugeImage.getHeight();
+		      int[][] result = new int[height][width]; 
+	        result = convertTo2DUsingGetRGB(hugeImage);
+	     }
+	     return result;
+	}
+
+}

@@ -1,0 +1,20 @@
+package proyecto;
+
+import java.io.IOException;
+
+public class main {
+
+	public static void main(String[] args) throws IOException  {
+		// TODO Auto-generated method stub
+		leerArchivo file = new leerArchivo();
+		int[][] result = file.abrirArchivo("foto1.jpg");
+		System.out.println("HOLA MUNDO");
+		for (int i = 0; i < result.length; i++) {
+			for (int j = 0; j < result.length; j++) {
+				System.out.println(result[i][j]);
+			}
+			System.out.println(" ");
+		}
+	}
+
+}

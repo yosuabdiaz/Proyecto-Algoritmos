@@ -1,0 +1,21 @@
+package proyecto;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferByte;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+public class leerArchivo{
+
+	public static int[][] abrirArchivo(String nombre)  throws IOException{
+		BufferedImage hugeImage = ImageIO.read(leerArchivo.class.getResource(nombre+".jpg"));
+	    int width = hugeImage.getWidth();
+		int height = hugeImage.getHeight();
+		int[][] result = new int[height][width]; 
+		for (int row = 0; row < height; row++) {
+			for (int col = 0; col < width; col++) {
+				result[row][col] = hugeImage.getRGB(col, row);
+			}
+		}
+	     return result;
+	}
+
+}

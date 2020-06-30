@@ -1,0 +1,30 @@
+package proyecto;
+
+import java.awt.BorderLayout;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class ventanaCarga extends JFrame {
+
+	public ventanaCarga() {
+		JFrame ventana = new JFrame();
+		ventana.setVisible(true);
+		ventana.setSize(200,200);
+		ImageIcon image = new ImageIcon("fondo1.jpg");
+		JLabel label = new JLabel("", image, JLabel.CENTER);
+		JPanel panel = new JPanel(new BorderLayout());
+		panel.add( label, BorderLayout.CENTER );
+		ventana.add(panel);	
+		}
+
+	
+	 
+}	
+	
+	
+	
+	
+

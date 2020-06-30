@@ -1,0 +1,21 @@
+package proyecto;
+
+import javax.swing.JFrame;
+
+public class ventanaCarga extends JFrame {
+
+	public ventanaCarga() {
+		
+		
+		
+		
+		}
+
+	
+	 
+}	
+	
+	
+	
+	
+
