@@ -28,4 +28,18 @@ public class centro {
                     System.out.println(info[row][col]);
 	    }           }
     }
+    
+    int[] getListaPixeles(){
+        
+        
+        int[] listaPixeles = new int[info.length*info[0].length];
+        int contador=0;
+        for (int row = 0; row < info.length; row++) {
+            for (int col = 0; col < info[0].length; col++) {
+                    listaPixeles[contador] = info[row][col];
+                    contador++;
+	    }
+        } 
+        return listaPixeles;
+    }
 }

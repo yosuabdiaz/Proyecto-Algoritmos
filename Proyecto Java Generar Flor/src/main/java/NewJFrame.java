@@ -128,10 +128,27 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        voraz VorazColores = new voraz();
+        VorazColores.setEtapas(Variables.Etapas);
+        
+        
+        Variables.listaPetalo.forEach(Petalo -> {
+        int[] listaPetalos = Petalo.getListaPixeles();/*Retorna una lista de pixeles del <petalo>*/
+            VorazColores.Colores(listaPetalos); /*Algoritmo Voraz*/
+        });
+        
+        Variables.listaCentro.forEach(Centro -> {
+        int[] listaCentros = Centro.getListaPixeles();/*Retorna una lista de pixeles del <centro>*/
+            VorazColores.Colores(listaCentros); /*Algoritmo Voraz*/
+        });
+        
+        
         Variables global = new Variables();
-        System.out.println("Centros:"+global.ElementosTipoCentro());
-        System.out.println("Petalos:"+global.ElementosTipoPetalo());
-        global.mostrarInfoPetalo();
+        //System.out.println(global.ElementosTipoColor());
+        //System.out.println(global.ElementosTipoAltura());
+        global.mostrarInfoAltura();
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     
