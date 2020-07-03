@@ -22,6 +22,7 @@ public class ventanaPreSeleccion extends JFrame implements ActionListener {
     JFrame frmPreSelect;
     JButton btnPetalo;
     JButton btnCentro;
+    JButton btnAltura;
     String foto1;
     public ventanaPreSeleccion(String foto){
         initialize(foto);
@@ -35,8 +36,8 @@ public class ventanaPreSeleccion extends JFrame implements ActionListener {
         frmPreSelect.getContentPane().setLayout(null);
         
         
-        btnPetalo = new JButton("PETALO");
-        btnPetalo.setBounds(130,50,100,30);
+        btnPetalo = new JButton("Seleccionar color de petalos en la flor");
+        btnPetalo.setBounds(44,0,300,30);
         btnPetalo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 try {
@@ -47,8 +48,10 @@ public class ventanaPreSeleccion extends JFrame implements ActionListener {
             }
         });
         frmPreSelect.getContentPane().add(btnPetalo);
-        btnCentro = new JButton("CENTRO");
-        btnCentro.setBounds(130,0,100,30);
+        
+        
+        btnCentro = new JButton("Seleccionar color del centro de la flor");
+        btnCentro.setBounds(44,34,300,30);
         btnCentro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 try {
@@ -59,6 +62,23 @@ public class ventanaPreSeleccion extends JFrame implements ActionListener {
             }
         });
         frmPreSelect.getContentPane().add(btnCentro);
+        
+        
+        
+        btnAltura = new JButton("Seleccionar alturas de petalos y centro");
+        btnAltura.setBounds(44,68,300,30);
+        btnAltura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                try {
+                    btnAlturaActionPerformed(evt);
+                } catch (IOException ex) {
+                    Logger.getLogger(ventanaPreSeleccion.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+        frmPreSelect.getContentPane().add(btnAltura);
+        
+        
         frmPreSelect.setVisible(true);
         
     }
@@ -67,12 +87,16 @@ public class ventanaPreSeleccion extends JFrame implements ActionListener {
         ventanaSeleccion window = new ventanaSeleccion(foto1,1); 
         window.frmSelectAreaIn.setVisible(true);
     }  
-    
     private void btnCentroActionPerformed(java.awt.event.ActionEvent evt) throws IOException {                                           
         // TODO add your handling code here:
         ventanaSeleccion window = new ventanaSeleccion(foto1,2); 
         window.frmSelectAreaIn.setVisible(true);
-    }  
+    } 
+    private void btnAlturaActionPerformed(java.awt.event.ActionEvent evt) throws IOException {                                           
+        // TODO add your handling code here:
+        ventanaSeleccion window = new ventanaSeleccion(foto1,3); 
+        window.frmSelectAreaIn.setVisible(true);
+    } 
     
 
     @Override
