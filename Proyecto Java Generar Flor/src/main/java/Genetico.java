@@ -130,7 +130,7 @@ public ArrayList<Individuo> fitnessPoblacion(ArrayList<Individuo> poblacion){
         }
         
         for(int j=0; j<listaLargos.size(); j++){
-            double num2=determinarGenotipo(poblacion.get(i)).get(1)/listaLargos.get(j);
+            double num2=determinarGenotipo(poblacion.get(i)).get(1)/listaLargos.get(0);
             if(num2>0.6 && num2<1.4){
                 if(num>0.6){
                     contadorAptos+=1;

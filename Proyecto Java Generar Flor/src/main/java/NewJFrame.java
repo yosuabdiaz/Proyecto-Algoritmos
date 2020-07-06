@@ -1,5 +1,6 @@
 
 
+import java.util.ArrayList;
 import javax.swing.JFrame;
 
 import javax.swing.JPanel;
@@ -148,7 +149,15 @@ public class NewJFrame extends javax.swing.JFrame {
         //System.out.println(global.ElementosTipoAltura());
         global.mostrarInfoAltura();
         
-        
+        ArrayList<ArrayList<Integer>> listaAtributosFinales=new ArrayList();
+        Genetico genetico=new Genetico(global.sacarArrayColores(),global.sacarArrayAlturas());
+        genetico.generarGenotipoLargo();
+        genetico.generarGenotipoColores();
+        ArrayList<Individuo> poblacionFinal=genetico.generacion(3);
+        for(int i=0;i<poblacionFinal.size();i++){
+            listaAtributosFinales.add(genetico.determinarGenotipo(poblacionFinal.get(i)));
+        }
+        System.out.println(listaAtributosFinales);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     
