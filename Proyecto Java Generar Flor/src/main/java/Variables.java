@@ -18,6 +18,26 @@ import java.util.ArrayList;
             
         }
         
+        ArrayList<Integer> sacarArrayColores(){
+            ArrayList<Integer> colores = new ArrayList<>();
+            
+            listaColor.forEach(color -> {
+                colores.add(color.getRGB());
+            });
+            
+            return colores;
+        }
+        ArrayList<Integer> sacarArrayAlturas(){
+            ArrayList<Integer> alturas = new ArrayList<>();
+            
+            listaAltura.forEach(altura -> {
+                alturas.add(altura.getSize());
+            });
+            
+            return alturas;
+        }
+        
+        
         void agregarAltura(altura nuevo)
         {
             if (nuevo.size!=0)
