@@ -14,10 +14,10 @@ import java.util.ArrayList;
 public class voraz {
     int largoEtapa;/*tamanno de las etapas*/
     int Etapas;
+    
     void voraz(){
         /*constructor*/
-    }
-
+    }   
     void setEtapas(int num){
         Etapas = num;
     }
@@ -53,18 +53,21 @@ public class voraz {
             
             hash[] h;
             h = hash.iniciarHash(largoEtapa);
-            
+            Variables global = new Variables();
             for (int indice = 0;indice < largoEtapa;indice++){
                 
                 hash.insertaHash(h, largoEtapa, etapa[indice]);
-            
+                
             }
             
-            int RGB = hash.getMax(h,largoEtapa);
+            int RGB = global.getColorPredominante();
+            //int RGB = hash.getMax(h,largoEtapa);
             color c = new color();
             c.setRGB(RGB);
             if (RGB != 0)
                 Variables.listaColor.add(c);
+            
+            global.ResetValues();
         }
         
         

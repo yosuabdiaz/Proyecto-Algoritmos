@@ -14,9 +14,45 @@ import java.util.ArrayList;
         public static int Etapas = 9; /*etapas para el voraz*/
         public static ArrayList<color>  listaColor = new ArrayList<color>();
         public static ArrayList<altura> listaAltura = new ArrayList<altura>();
+        public static int  rgb_colorPredominante = 0;
+        public static int  int_maximoContador = 0;
+
+        
         void Variables(){
             
         }
+        
+        
+        void guardarCantidadYColor(int cantidad,int color){
+            int cantidadMax = getMaximoContador();
+                    if(cantidad > cantidadMax){
+                        setMaximoContador(cantidad);
+                        setColorPredominante(color);
+                    }
+        }
+        
+        void ResetValues(){
+            setColorPredominante(0);
+            setMaximoContador(0);
+        }
+        void setColorPredominante(int n){
+            rgb_colorPredominante = n;
+        }
+
+        int getColorPredominante(){
+            return rgb_colorPredominante;        
+        }
+
+        void setMaximoContador(int n){
+            int_maximoContador = n;
+        }
+
+        int getMaximoContador(){
+            return int_maximoContador;        
+        }
+
+        
+        
         
         ArrayList<Integer> sacarArrayColores(){
             ArrayList<Integer> colores = new ArrayList<>();
