@@ -194,7 +194,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private void btnImagen3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImagen3ActionPerformed
         // TODO add your handling code here:
     
-        ventanaPreSeleccion window = new ventanaPreSeleccion("foto3.jpg"); 
+        ventanaPreSeleccion window = new ventanaPreSeleccion("foto3.png"); 
     }//GEN-LAST:event_btnImagen3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

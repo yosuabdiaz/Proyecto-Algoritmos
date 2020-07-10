@@ -32,29 +32,25 @@ public class hash {
         boolean i = false;
         //boolean s = false;
         int j = funcion(-1*n, m);
+        Variables global= new Variables(); 
         do {
             if (h[j].estado == 0 || h[j].estado == 1) {
                 h[j].dato = n;
                 h[j].estado = 2;
                 h[j].cantidad = 1;
                 i = true;
+                global.guardarCantidadYColor(h[j].cantidad, n);
             } else {
                 if (h[j].dato == n){
                     h[j].cantidad = h[j].cantidad+1;
                     i = true;
-                    //s = true;
+                    global.guardarCantidadYColor(h[j].cantidad, n);
                 }else{
                     j++;
                 }
             }
         } while (j < m && !i);
-        /*if (i) {
-            //System.out.println("insertado");
-            //if(s)
-                //System.out.println();
-        } else {
-            System.out.println("llena");
-        }*/
+        
     }
 
     static int buscaHash(hash[] h, int m, int n) {
