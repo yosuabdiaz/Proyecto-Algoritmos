@@ -1,19 +1,12 @@
 package proyectoalgoritmos;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
- * @author soporte
+ * @author Yosua B. Díaz.
  */
 public class hash {
-    int dato;
-    int estado; //0 = Vacío, 1 = Eliminado, 2 = Ocupado
-    int cantidad;
+    int dato; // RGB del color.
+    int estado; //0 = Vacío, 1 = Eliminado, 2 = Repetido.
+    int cantidad; //veces aparecido.
     
     static int funcion(int n, int m) {
         return ((n + 1) % m);
@@ -30,11 +23,11 @@ public class hash {
 
     static void insertaHash(hash[] h, int m, int n) {
         boolean i = false;
-        //boolean s = false;
         int j = funcion(-1*n, m);
         Variables global= new Variables(); 
         do {
             if (h[j].estado == 0 || h[j].estado == 1) {
+                //nuevo color.
                 h[j].dato = n;
                 h[j].estado = 2;
                 h[j].cantidad = 1;
@@ -42,58 +35,15 @@ public class hash {
                 global.guardarCantidadYColor(h[j].cantidad, n);
             } else {
                 if (h[j].dato == n){
+                    //color repetido.
                     h[j].cantidad = h[j].cantidad+1;
                     i = true;
                     global.guardarCantidadYColor(h[j].cantidad, n);
                 }else{
+                    //campo ocupado con color diferente.
                     j++;
                 }
             }
-        } while (j < m && !i);
-        
-    }
-
-    static int buscaHash(hash[] h, int m, int n) {
-        int j = funcion(n, m);
-        while (j < m) {
-            if (h[j].estado == 0) {
-                return -1;
-            } else if (h[j].dato == n) {
-                if (h[j].estado == 1) {
-                    return -1;
-                } else {
-                    return j;
-                }
-            } else {
-                j++;
-            }
-        }
-        return -1;
-    }
-
-    static int eliminaHash(hash[] h, int m, int n) {
-        int i = buscaHash(h, m, n);
-        if (i == -1) {
-            return -1;
-        } else {
-            h[i].estado = 1;
-            return 1;
-        }
-    }
-    
-    static int getMax(hash[] h,int largoEtapa){
-        int mayor=0;
-        int color=0;
-        int temporal;
-        for (int x = 0; x < largoEtapa; x++) {
-                
-                temporal = h[x].cantidad;
-               
-                if (temporal > mayor){
-                    mayor = temporal;
-                    color = h[x].dato;
-                }
-            }
-        return color;
+        } while (j < m && !i);   
     }
 }
